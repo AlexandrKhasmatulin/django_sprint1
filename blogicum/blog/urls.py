@@ -1,6 +1,6 @@
 from django.urls import path
 
-from blogicum.blog import views
+import views
 
 app_name = 'blog'
 urlpatterns = [
