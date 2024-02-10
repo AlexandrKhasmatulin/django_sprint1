@@ -44,6 +44,8 @@ posts = [
 ]
 
 
+posts_id = {post['id']: post for post in posts}
+
 def index(request):
     template = 'blog/index.html'
     context = {'posts': reversed(posts)}
@@ -52,7 +54,7 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    context = {'post': posts[id]}
+    context = {'post': posts_id[id]}
     return render(request, template, context)
 
 
